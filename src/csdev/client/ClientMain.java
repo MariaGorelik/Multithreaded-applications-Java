@@ -121,13 +121,13 @@ public class ClientMain {
 	static MessageRecord inputRecord(Scanner in) {
 		String day, time, phone, complaint;
 		System.out.print("Enter day: ");
-		day = in.nextLine();
+		day = in.nextLine().trim();
 		System.out.print("Enter time: ");
-		time = in.nextLine();
+		time = in.nextLine().trim();
 		System.out.print("Enter phone number: ");
-		phone = in.nextLine();
+		phone = in.nextLine().trim();
 		System.out.print("Enter complaint: ");
-		complaint = in.nextLine();
+		complaint = in.nextLine().trim();
 		return new MessageRecord(day, time, phone, complaint);
 	}
 	
@@ -194,11 +194,11 @@ public class ClientMain {
 			System.out.println("Your record {");
 				System.out.println("Day: ");
 				System.out.print(m.day);
-				System.out.println("Time: ");
+				System.out.println("\nTime: ");
 				System.out.print(m.time);
-				System.out.println("Phone number: ");
+				System.out.println("\nPhone number: ");
 				System.out.print(m.phone);
-				System.out.println("Complaint: ");
+				System.out.println("\nComplaint: ");
 				System.out.print(m.complaint);
 			    System.out.println("}");
 		}

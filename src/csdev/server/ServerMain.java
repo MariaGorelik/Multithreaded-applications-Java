@@ -24,8 +24,8 @@ public class ServerMain {
 	
 	public static boolean isValidDay(String d)
 	{
-		if (d == "Monday" || d == "Tuesday" || d == "Wednesday" || d == "Thursday" || 
-				d == "Friday" || d == "Saturday")
+		if (d.equals("Monday") || d.equals("Tuesday") || d.equals("Wednesday") || d.equals("Thursday") || 
+				d.equals("Friday") || d.equals("Saturday"))
 		{
 			return true;
 		}
@@ -34,8 +34,8 @@ public class ServerMain {
 	
 	public static boolean isValidTime(String t)
 	{
-		if (t == "10.00" || t == "11.00" || t == "12.00" || t == "13.00" || 
-				t == "14.00" || t == "15.00" || t == "16.00" || t == "17.00" || t == "18.00")
+		if (t.equals("10.00") || t.equals("11.00") || t.equals("12.00") || t.equals("13.00") || 
+				t.equals("14.00") || t.equals("15.00") || t.equals("16.00") || t.equals("17.00") || t.equals("18.00"))
 		{
 			return true;
 		}
@@ -401,18 +401,8 @@ class ServerThread extends Thread {
 			return false;
 		}
 	}
-	
+
 	void letter( MessageRecord msg ) throws IOException {
-		
-//		ServerThread user = ServerMain.getUser( msg.usrNic );
-//		if ( user == null )
-//		{
-//			os.writeObject( new MessageLetterResult( 
-//					"User " + msg.usrNic + " is not found" ));
-//		} else {
-//			user.addRecord( userNic + ": " + msg.txt );
-//			os.writeObject( new MessageLetterResult());
-//		}
 		if (!ServerMain.isValidDay(msg.day) || !ServerMain.isValidTime(msg.time))
 		{
 			os.writeObject( new MessageRecordResult("Incorrect day or(and) time type"));
