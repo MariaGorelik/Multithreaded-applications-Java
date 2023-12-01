@@ -416,7 +416,12 @@ class ServerThread extends Thread {
 			ServerMain.putClientRecord(this.day, this.time, this);
 			//os.writeObject("You have successfully signed up");
 			os.writeObject( new MessageRecordResult("You have successfully signed up"));
-		    }
+			System.err.print("User: " + this.userFullName + " registered:\n");
+			System.err.print("Day : " + msg.day + "\n");
+			System.err.print("Time : " + msg.time + "\n");
+			System.err.print("Phone: " + msg.phone + "\n");
+			System.err.print("Complaint: " + msg.complaint + "\n");
+			}
 		    else
 		    {
 			this.day = null;
